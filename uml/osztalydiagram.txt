@@ -1,0 +1,27 @@
+{
+	Termek
+	-adat(objektum)
+	-divElem(HTML elem)
+	-buttonElem(gomb)
+	onclick()
+________________________________________
+	egy objektum a listából
+	     |
+	     ˇ
+	constructor(adat, szuloelem)
+	kattintasTrigger()
+		^
+		|
+      	létrehoz egy saját eseményt "kiválaszt"
+}
+
+
+{
+	Termekek
+	-adatLista
+	-kedvencekLista
+	$(window).on("kiválaszt")
+________________________________________
+
+	constructor(adatlista)
+}
