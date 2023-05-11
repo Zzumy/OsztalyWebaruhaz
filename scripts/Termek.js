@@ -4,14 +4,26 @@ export class Termek {
   #buttonElem;
 
   constructor(adat, szuloElem) {
-    szuloElem.append(`<div class="elem"><p></p><button></button></div>`);
-    this.#divElem = $("article div:last-child");
-    this.#pElem = $("article div:last-child p");
-    this.#buttonElem = $("article div:last-child button");
+    this.#adat = adat;
+    szuloElem.append(`
+      <div class="divElem">
+        <img src="css/kepek/${this.#adat.kep}" alt="kep">
+        <h2 class="pElem">${this.#adat.nev}</h2>
+        <p class="pElem">${this.#adat.fajta}</p>
+        <p class="pElem">${this.#adat.kor}</p>
+        <button>Kedvencekhez</button>
+      </div>
+    `);
+    this.#divElem = szuloElem.children(".divElem:last-child");
+    this.#buttonElem = this.#divElem.children("buttton");
 
     this.#divElem.on("click", () => {
       this.esemenyTrigger();
     });
+  }
+
+  getAdat() {
+    return this.#adat;
   }
 
   esemenyTrigger() {
